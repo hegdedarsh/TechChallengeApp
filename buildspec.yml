@@ -18,7 +18,7 @@ phases:
       - echo Build started on `date`
       - sh build.sh
       - echo Building the Docker image...
-      - docker build -f Dockerfile -t $REPOSITORY_URI:tech-challenge .
+      - docker build -f Dockerfile -t $REPOSITORY_URI:tech-challenge-latest .
       - docker tag $REPOSITORY_URI:tech-challenge-latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
     commands:
