@@ -9,7 +9,7 @@ phases:
     commands:
       - echo Entered the pre_build phase...
       - aws --version
-      - $(aws ecr get-login-password --region ap-southeast-1 | sed 's|https://||')
+      - aws ecr get-login-password --region ap-southeast-1 | sed 's|https://||'
       - REPOSITORY_URI=565040840361.dkr.ecr.ap-southeast-1.amazonaws.com/tech-challenge
       - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
   build:
